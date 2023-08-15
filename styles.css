@@ -1,0 +1,144 @@
+body,
+html {
+  margin: 0;
+  height: 100%;
+}
+
+/* images */
+.parallax {
+  background-image: url("./bg.jpg");
+
+  height: 100%;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 200px;
+  padding: 10%;
+  background-color: aliceblue;
+}
+
+.image-cell {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-cell img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* text */
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+
+.text-section {
+  padding: 100px 0;
+  background-image: url("./dark-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.text-section p {
+  font-family: "Source Code Pro", monospace;
+  font-size: 36px;
+  color: rgba(20, 233, 109, 0.774);
+  display: inline-block; 
+  margin: 0 auto;
+}
+
+/* Animation */
+p {
+  border-right: solid 3px rgba(0, 255, 0, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: animated-text 4s steps(29, end) 1s 1 normal both,
+    animated-cursor 600ms steps(29, end) infinite;
+}
+
+/* Text Animation */
+@keyframes animated-text {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 40%;
+  }
+}
+
+/* Cursor Animation */
+@keyframes animated-cursor {
+  from {
+    border-right-color: rgba(0, 255, 0, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+/* nav */
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background: #fff;
+}
+
+nav li {
+  display: inline-block;
+  padding: 24px 10px;
+}
+
+nav li a {
+  color: #757575;
+  text-transform: uppercase;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  height: 70px;
+  z-index: 1;
+  background-color: aquamarine;
+}
+
+@media only screen and (max-width: 520px) {
+  nav li {
+    padding: 24px 4px;
+  }
+
+  nav li a {
+    font-size: 14px;
+  }
+}
+
+/* image scaling */
+
+.scaling-section {
+  background-color: black;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.scaling-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+}
